@@ -43,7 +43,7 @@ app.post("/postmany",async (req,res)=>{
     res.status(201).send(sendMethod); 
 })
 
-app.get("/get", auth,async (req, res)=>{
+app.get("/get",async (req, res)=>{
     const getMethod=await client.db("CRUD").collection("data").find({}).toArray();
     res.status(200).send(getMethod);
 })
